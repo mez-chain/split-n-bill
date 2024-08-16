@@ -3,15 +3,17 @@ export default function Friend({
   selectedFriend,
   setSelectedFriend,
   id,
+  setIsOpen,
 }) {
   function handleSelectedElement() {
     if (selectedFriend === id) {
       setSelectedFriend(null);
     } else setSelectedFriend(id);
+    setIsOpen(false);
   }
 
   return (
-    <>
+    <li className={selectedFriend === id ? "selected" : ""}>
       <img src={friend.image} alt="avatar"></img>
       <h3>{friend.name}</h3>
       <p
@@ -28,6 +30,6 @@ export default function Friend({
       <button className="button" onClick={handleSelectedElement}>
         {selectedFriend === id ? "Close" : "Select"}
       </button>
-    </>
+    </li>
   );
 }

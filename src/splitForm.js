@@ -37,34 +37,34 @@ export default function SplitForm({
     myFriend && (
       <form className="form-split-bill" onSubmit={handleBalance}>
         <h2>split a bill with {myFriend.name}</h2>
+
         <label>💰 Bill value</label>
         <input
           type="Number"
           value={bill}
           onChange={(e) => setBill(Number(e.target.value))}
         />
+
         <label>🧍🏼‍♂️ Your expense</label>
         <input
           type="Number"
           value={myExpense}
-          onChange={(e) => setMyExpense(Number(e.target.value))}
+          onChange={(e) =>
+            setMyExpense(
+              Number(e.target.value) > bill ? myExpense : Number(e.target.value)
+            )
+          }
         />
+
         <label>🧑‍🤝‍🧑 {myFriend.name}'s expense</label>
-        <input
-          type="Number"
-          value={bill - myExpense}
-          style={{
-            backgroundColor: "#f0f0f0",
-            color: "#6c757d",
-            cursor: "not-allowed",
-          }}
-          readOnly
-        />
+        <input type="Number" value={bill - myExpense} disabled />
+
         <label>🤑 Who is paying the bill?</label>
         <select value={whoPay} onChange={(e) => setWhoPay(e.target.value)}>
           <option value="You">You</option>
           <option value={myFriend.name}>{myFriend.name}</option>
         </select>
+
         <button className="button">Split bill</button>
       </form>
     )
