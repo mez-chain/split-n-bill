@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function AddFriend({ friends, onSetFriends }) {
   const [name, setName] = useState("");
   const [image, setImage] = useState("https://i.pravatar.cc/48");
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   function handleAddFriend(e) {
     e.preventDefault();

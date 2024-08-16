@@ -5,7 +5,9 @@ export default function Friend({
   id,
 }) {
   function handleSelectedElement() {
-    setSelectedFriend(id);
+    if (selectedFriend === id) {
+      setSelectedFriend(null);
+    } else setSelectedFriend(id);
   }
 
   return (
@@ -14,7 +16,7 @@ export default function Friend({
       <h3>{friend.name}</h3>
       <p
         className={
-          friend.balance === 0 ? "" : friend.balance > 0 ? "red" : "green"
+          friend.balance === 0 ? "" : friend.balance > 0 ? "green" : "red"
         }
       >
         {friend.balance === 0
