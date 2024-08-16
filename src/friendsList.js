@@ -1,3 +1,17 @@
+import Friend from "./friend";
+
 export default function FriendsList() {
-  return <div>@todo show list of friends</div>;
+  return (
+    <ul className="sidebar">
+      <li>
+        <Friend></Friend>
+      </li>
+      <li>
+        <Friend></Friend>
+      </li>
+      <li>
+        <Friend></Friend>
+      </li>
+    </ul>
+  );
 }

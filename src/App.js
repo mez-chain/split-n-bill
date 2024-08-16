@@ -4,7 +4,7 @@ import SplitForm from "./splitForm";
 
 export default function App() {
   return (
-    <div>
+    <div className="app">
       <div>
         <FriendsList></FriendsList>
         <AddFriend></AddFriend>
