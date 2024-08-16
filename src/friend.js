@@ -1,9 +1,9 @@
-export default function Friend() {
+export default function Friend({ img, name }) {
   return (
     <>
-      <img src="https://i.pravatar.cc/48" alt="avatar"></img>
-      <h3>Clark</h3>
-      <p>You and Clark are even</p>
+      <img src={img} alt="avatar"></img>
+      <h3>{name}</h3>
+      <p>You and {name} are even</p>
       <button className="button">Select</button>
     </>
   );
