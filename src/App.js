@@ -26,14 +26,23 @@ import { useState } from "react";
 
 export default function App() {
   const [friends, setFriends] = useState([]);
+  const [selectedFriend, setSelectedFriend] = useState(0);
 
   return (
     <div className="app">
       <div>
-        <FriendsList friends={friends}></FriendsList>
+        <FriendsList
+          friends={friends}
+          selectedFriend={selectedFriend}
+          setSelectedFriend={setSelectedFriend}
+        ></FriendsList>
         <AddFriend onSetFriends={setFriends} friends={friends}></AddFriend>
       </div>
-      <SplitForm></SplitForm>
+      <SplitForm
+        selectedFriend={selectedFriend}
+        friends={friends}
+        onSetFriends={setFriends}
+      ></SplitForm>
     </div>
   );
 }

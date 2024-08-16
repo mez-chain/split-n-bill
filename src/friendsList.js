@@ -1,14 +1,23 @@
 // import { useState } from "react";
 import Friend from "./friend";
 
-export default function FriendsList({ friends }) {
+export default function FriendsList({
+  friends,
+  selectedFriend,
+  setSelectedFriend,
+}) {
   // const [newFriend, setNewFriend] = useState("");
 
   return (
     <ul className="sidebar">
-      {friends.map((friend) => (
+      {friends.map((friend, id) => (
         <li>
-          <Friend img={friend.image} name={friend.name}></Friend>
+          <Friend
+            id={friend.id}
+            friend={friend}
+            selectedFriend={selectedFriend}
+            setSelectedFriend={setSelectedFriend}
+          ></Friend>
         </li>
       ))}
     </ul>
